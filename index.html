@@ -8,21 +8,25 @@
             background-color: #ffffff; 
             color: #000000;
             max-width: 700px;
-            margin: 64px auto;
+            margin: 16px auto;
             line-height: 1.5;
         }
     </style>
 </head>
 
 <body>
+    <button onclick="toggleDarkMode()" style="float: right; margin-left: 16px;">
+        Dark mode
+    </button>
+    <br><br>
+
     <div style="float: right"><img src="portrait.jpg" height="250"></div>
     <h1>Derek Cheung</h1>
     <a href="mailto:decheung@ucsd.edu">decheung at ucsd dot edu</a><br>
     <a href="https://github.com/dwcheung">GitHub</a><br>
     <a href="https://www.linkedin.com/in/derek-cheung-8518271ba/">LinkedIn</a><br>
     <a href="https://dwcheung.github.io/cv.pdf">cv.pdf</a><br>
-
-    <br><br><br>
+    <br><br>
 
     <h3>About Me</h3>
     <p>
@@ -32,8 +36,7 @@
     benefit society. I enjoy swimming and drumming in my spare time. Inception. 
     Yes, I think it's the greatest film of all time.
     </p>
-
-    <br><br><br>
+    <br>
 
     <h3>Projects</h3>
     TBD
@@ -45,13 +48,37 @@
             TBD
         </li>
     </ul>
-    
 
     <br><br><br><br><br>
 
     <footer>
         &copy; 2026 Derek Cheung
     </footer>
+
+    <script>
+        let darkMode = false;
+
+        function toggleDarkMode() {
+            darkMode = !darkMode;
+
+            if (darkMode) {
+                document.body.style.backgroundColor = "#111111";
+                document.body.style.color = "#eeeeee";
+
+                document.querySelectorAll("a").forEach(link => {
+                    link.style.color = "#8ab4f8";
+                });
+            } else {
+                document.body.style.backgroundColor = "#ffffff";
+                document.body.style.color = "#000000";
+
+                document.querySelectorAll("a").forEach(link => {
+                    link.style.color = "";
+                });
+            }
+        }
+    </script>
+
 </body>
 
 </html>
